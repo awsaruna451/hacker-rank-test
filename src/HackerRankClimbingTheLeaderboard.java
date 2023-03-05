@@ -1,14 +1,10 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class HackerRankClimbingTheLeaderboard {
 
 
     public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
-        // Write your code here
-        Map<Integer, Integer> ranks = new HashMap<>();
+        TreeMap<Integer, Integer> ranks = new TreeMap<>();
         int rankCount = 0;
         for (int i =0; i < ranked.size(); i++) {
 
@@ -33,18 +29,29 @@ public class HackerRankClimbingTheLeaderboard {
 
     }
 
-    public static int playerRank(Map<Integer, Integer> p, int score) {
+    public static int playerRank(TreeMap<Integer, Integer> p, int score) {
         int rank = 0;
-        for(Map.Entry<Integer, Integer> pl: p.entrySet()) {
-            if (pl.getValue() <= score) {
-                rank = pl.getKey();
-                break;
-            } else {
-                continue;
-            }
-        }
-        if (rank == 0) {
+
+        if (score >= p.firstEntry().getValue()) {
+            rank = 1;
+        } else if (score < p.lastEntry().getValue()) {
             rank = p.size() +1;
+
+        } else {
+            for (Map.Entry<Integer, Integer> pl : p.entrySet()) {
+
+                if (score <= pl.getValue()) {
+                    if (score < pl.getValue()) {
+                        rank = pl.getKey() +1;
+                    } else {
+                        rank = pl.getKey();
+                    }
+                }
+
+                else {
+                    continue;
+                }
+            }
         }
         return rank;
     }
