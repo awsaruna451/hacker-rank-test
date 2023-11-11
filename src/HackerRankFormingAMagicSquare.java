@@ -4,6 +4,25 @@ import java.util.Map;
 
 public class HackerRankFormingAMagicSquare {
 
+   /* public static int formingMagicSquare(List<List<Integer>> s) {
+        // Write your code here
+
+        int r0c123 = 0, r1c123 = 0, r2c123 = 0;
+        int c0r123 =0, c1r123 = 0, c2r123 = 0;
+        int diagonal1 = 0, diagonal2 = 0;
+
+        for (int i =0; i < s.size(); i++) {
+            for(int j = 0; j < s.size(); j++) {
+
+
+
+            }
+        }
+
+
+    }*/
+
+
 //    public static int formingMagicSquare(List<List<Integer>> s) {
 //        // Write your code here
 //        Map<Integer, Integer> replaceVal = new HashMap<>();
