@@ -1,26 +1,42 @@
+/*
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class HackerRankFormingAMagicSquare {
 
-   /* public static int formingMagicSquare(List<List<Integer>> s) {
+    public static int formingMagicSquare(List<List<Integer>> s) {
         // Write your code here
-
-        int r0c123 = 0, r1c123 = 0, r2c123 = 0;
-        int c0r123 =0, c1r123 = 0, c2r123 = 0;
-        int diagonal1 = 0, diagonal2 = 0;
-
-        for (int i =0; i < s.size(); i++) {
-            for(int j = 0; j < s.size(); j++) {
-
-
+        int chCount =0;
+        List<List<Integer>> list1 = new ArrayList<>();
+        for (int i = 0; i < s.size(); i++) {
+            List<Integer> value = s.get(i);
+            for (int j = 0; j < value.size(); j++) {
+                if(i==1 && j==1 && value.get(j) !=5) {
+                    chCount = Math.abs(value.get(j)-5);
+                    value.remove(j);
+                    value.add(j, 5);
+                }
 
             }
+            list1.add(value);
+        }
+
+        for(int p = 0; p < list1.size(); p++) {
+
+            List<Integer> val = list1.g
         }
 
 
-    }*/
+
+        return chCount;
+
+
+    }
+
+
+}
 
 
 //    public static int formingMagicSquare(List<List<Integer>> s) {
@@ -54,3 +70,4 @@ public class HackerRankFormingAMagicSquare {
 //    }
 
 }
+*/
